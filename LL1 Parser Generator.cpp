@@ -138,11 +138,11 @@ int main() {
     
     //Grammar rules for Arithmetic Expressions
     parser.set_start("E");
-    parser.add_rule("E", {"T", "E'"});
-    parser.add_rule("E'", {"+", "T", "E'"});
+    parser.add_rule("E", {"T", "E'"});    //2+3
+    parser.add_rule("E'", {"+", "T", "E'"});    //1+2+3 
     parser.add_rule("E'", {"ε"});
-    parser.add_rule("T", {"F", "T'"});
-    parser.add_rule("T'", {"*", "F", "T'"});
+    parser.add_rule("T", {"F", "T'"});    //2*3
+    parser.add_rule("T'", {"*", "F", "T'"});    //2*3*4
     parser.add_rule("T'", {"ε"});
     parser.add_rule("F", {"(", "E", ")"});
     parser.add_rule("F", {"id"});
